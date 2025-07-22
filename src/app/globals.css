@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 275 100% 35%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 195 53% 79%;
+    --accent-foreground: 240 10% 3.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 195 53% 79%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 275 100% 35%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 195 53% 79%;
+    --accent-foreground: 240 10% 3.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 195 53% 79%;
+  }
+
+  .theme-light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 275 85% 45%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+  }
+
+  .theme-rose {
+    --background: 240 4% 8%;
+    --foreground: 0 0% 98%;
+    --card: 347 12% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 347 90% 45%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 347 80% 85%;
+    --accent-foreground: 347 90% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 347 12% 20%;
+    --input: 347 12% 20%;
+    --ring: 347 90% 45%;
+  }
+
+  .theme-mint {
+    --background: 200 20% 7%;
+    --foreground: 180 15% 96%;
+    --card: 180 15% 11%;
+    --card-foreground: 180 15% 96%;
+    --popover: 180 15% 7%;
+    --popover-foreground: 180 15% 96%;
+    --primary: 170 80% 35%;
+    --primary-foreground: 170 90% 98%;
+    --secondary: 180 10% 20%;
+    --secondary-foreground: 180 15% 96%;
+    --muted: 180 10% 20%;
+    --muted-foreground: 180 8% 65%;
+    --accent: 170 80% 75%;
+    --accent-foreground: 170 90% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 180 15% 20%;
+    --input: 180 15% 20%;
+    --ring: 170 80% 35%;
+  }
+
+  .theme-gold {
+    --background: 30 20% 5%;
+    --foreground: 40 15% 95%;
+    --card: 35 15% 9%;
+    --card-foreground: 40 15% 95%;
+    --popover: 30 20% 5%;
+    --popover-foreground: 40 15% 95%;
+    --primary: 45 90% 50%;
+    --primary-foreground: 45 90% 5%;
+    --secondary: 35 10% 18%;
+    --secondary-foreground: 40 15% 95%;
+    --muted: 35 10% 18%;
+    --muted-foreground: 40 8% 65%;
+    --accent: 45 90% 80%;
+    --accent-foreground: 45 90% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 35 15% 18%;
+    --input: 35 15% 18%;
+    --ring: 45 90% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .blinking-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: currentColor;
+    animation: blink 1s step-end infinite;
+    vertical-align: bottom;
+  }
+
+  @keyframes blink {
+    from, to { background-color: transparent }
+    50% { background-color: currentColor; }
+  }
+}
