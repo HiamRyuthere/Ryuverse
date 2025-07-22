@@ -12,12 +12,12 @@ const proBonoCauses = [
   {
     name: "Environment",
     description: "Supporting initiatives focused on climate action, sustainability, and the protection of our planet's ecosystems. Technology can play a crucial role in monitoring, analysis, and promoting environmental awareness.",
-    href: "https://www.un.org/en/climatechange",
+    href: "https://www.un.org/en/climatechange/what-is-climate-change",
   },
   {
     name: "Humanism",
     description: "Contributing to projects that uphold human dignity, rights, and ethical progress. I believe in leveraging technology to foster a more just, compassionate, and equitable global society.",
-    href: "https://www.ohchr.org/en/ohchr_homepage",
+    href: "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
   },
   {
     name: "Philosophy",

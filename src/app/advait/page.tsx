@@ -71,7 +71,7 @@ const pageContent = {
         title: 'Adi Shankaracharya Bhasya',
         description: "The foundational commentaries on the Upanishads, Brahma Sutras, and Bhagavad Gita.",
         href: '/advait/bhasya',
-        external: false,
+        external: true,
       },
     ]
   },
