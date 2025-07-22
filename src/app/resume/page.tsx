@@ -7,7 +7,7 @@ import { Download, Github, Linkedin, Mail, FolderGit2, GraduationCap, Building, 
 const skills = [
   { name: "Spring Boot", description: "Robust Java backends with Spring Security & JPA." },
   { name: "Python", description: "Versatile scripting for automation and web backends." },
-  { name: "Low Level & OS", description: "C/C++ and OS concepts for performance-critical tasks." },
+  { name: "Low Level & OS ", description: "C/C++ and OS concepts for performance-critical tasks." },
   { name: "Web Design", description: "Minimalist, responsive UI/UX with Next.js & Tailwind." },
 ];
 
