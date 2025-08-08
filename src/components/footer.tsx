@@ -8,7 +8,7 @@ import { Button } from './ui/button';
 const socialLinks = [
   {
     name: 'Email',
-    href: 'mailto:hiamryu@outlook.com',
+    href: 'mailto:hiamryu@duck.com',
     icon: Mail,
   },
   {
@@ -29,7 +29,11 @@ const socialLinks = [
 ];
 
 const footerLinks = [
+  
   { name: 'Disclaimer', href: '/disclaimer' },
+  { name: 'About This Website', href: '/about-website' },
+  { name: 'Credit / Content Removal', href: '/credit-removal' },
+  { name: 'Other Issue', href: '/other-issue' },
 ];
 
 

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Palette, Cpu, ExternalLink } from 'lucide-react';
 import AnimatedHeadline from '@/components/animated-headline';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 const services = [
   {
@@ -54,78 +55,84 @@ const sectionAnimation = {
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4">
-      
-      <section className="flex flex-col items-center justify-center text-center min-h-screen">
-        <AnimatedHeadline text="Hey, I am Harsh" />
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-          A Minimalist, Poet & Programmer.
-        </p>
-        <div className="mt-8 flex justify-center gap-4">
-          <Button asChild>
-            <Link href="/hire-me">Hire Me</Link>
-          </Button>
-          <Button variant="secondary" asChild>
-            <Link href="/about">Read More</Link>
-          </Button>
-        </div>
-      </section>
+    <>
+      <Head>
+        <title>Home | Harsh Parmar</title>
+        <meta name="description" content="Welcome to the personal website of Harsh Parmar. Explore my work, thoughts, and journey as a programmer, poet, and minimalist." />
+      </Head>
+      <div className="container mx-auto px-4">
+        
+        <section className="flex flex-col items-center justify-center text-center min-h-screen">
+          <AnimatedHeadline text="Hey, I am Harsh" />
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            A Minimalist, Poet & Programmer.
+          </p>
+          <div className="mt-8 flex justify-center gap-4">
+            <Button asChild>
+              <Link href="/hire-me">Hire Me</Link>
+            </Button>
+            <Button variant="secondary" asChild>
+              <Link href="/about">Read More</Link>
+            </Button>
+          </div>
+        </section>
 
-      <motion.section 
-        id="hire-me" 
-        className="py-16 md:py-24 border-t border-border"
-        {...sectionAnimation}
-      >
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl">Hire Me For</h2>
-          <p className="text-muted-foreground mt-2 text-lg">My skillset for your next project.</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card className="bg-card/50 border-border hover:border-primary transition-colors duration-300 transform hover:-translate-y-1 flex flex-col h-full">
-                <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
-                  {service.icon}
-                  <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <CardDescription className="text-base">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-                {service.learnMoreUrl && (
-                  <CardFooter>
-                    <Button variant="link" asChild className="p-0 h-auto">
-                      <a href={service.learnMoreUrl} target="_blank" rel="noopener noreferrer">
-                        Learn More
-                        <ExternalLink className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
-                  </CardFooter>
-                )}
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
+        <motion.section 
+          id="hire-me" 
+          className="py-16 md:py-24 border-t border-border"
+          {...sectionAnimation}
+        >
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-4xl md:text-5xl">Hire Me For</h2>
+            <p className="text-muted-foreground mt-2 text-lg">My skillset for your next project.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="bg-card/50 border-border hover:border-primary transition-colors duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+                  <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
+                    {service.icon}
+                    <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <CardDescription className="text-base">
+                      {service.description}
+                    </CardDescription>
+                  </CardContent>
+                  {service.learnMoreUrl && (
+                    <CardFooter>
+                      <Button variant="link" asChild className="p-0 h-auto">
+                        <a href={service.learnMoreUrl} target="_blank" rel="noopener noreferrer">
+                          Learn More
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </a>
+                      </Button>
+                    </CardFooter>
+                  )}
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
 
-      <motion.section 
-        className="py-16 md:py-24 border-t border-border"
-        {...sectionAnimation}
-      >
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl">My Logos</h2>
-          <p className="text-muted-foreground mt-2 text-lg">A collection of identity designs.</p>
-        </div>
-        <LogoCloud />
-      </motion.section>
-      
-    </div>
+        <motion.section 
+          className="py-16 md:py-24 border-t border-border"
+          {...sectionAnimation}
+        >
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-4xl md:text-5xl">My Logos</h2>
+            <p className="text-muted-foreground mt-2 text-lg">A collection of identity designs.</p>
+          </div>
+          <LogoCloud />
+        </motion.section>
+        
+      </div>
+    </>
   );
 }

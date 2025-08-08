@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import SocialLoader from '@/components/social-loader';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import WeatherWidget from '@/components/weather-widget';
 
 const initialPosts = [
   {
@@ -115,6 +116,8 @@ export default function SocialPlatformPage() {
                     This section is a non-functional demo. All features and data shown are for demonstration purposes only.
                   </AlertDescription>
                 </Alert>
+                
+                <WeatherWidget />
 
                 <Card className="mb-8">
                     <CardContent className="p-4">

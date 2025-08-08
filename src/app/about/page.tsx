@@ -7,10 +7,16 @@ import AcademicTimeline from "@/components/academic-timeline";
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import type { Metadata } from 'next';
+import Head from "next/head";
 
 export default function AboutPage() {
   return (
     <>
+      <Head>
+        <title>About | Harsh Parmar</title>
+        <meta name="description" content="Learn more about Harsh Parmar, a minimalist, poet, and programmer. Discover his story, philosophy, and academic journey." />
+      </Head>
       <div className="flex min-h-[calc(100vh-theme(spacing.14))] flex-col items-center justify-center p-4">
         <div className="container mx-auto">
           <div className="grid max-w-5xl mx-auto grid-cols-1 items-center gap-12 md:grid-cols-2">

@@ -8,6 +8,7 @@ import { BookOpen, ExternalLink, Feather } from 'lucide-react';
 import ShankaracharyaTimeline from '@/components/shankaracharya-timeline';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 const pageContent = {
   en: {
@@ -71,7 +72,7 @@ const pageContent = {
         title: 'Adi Shankaracharya Bhasya',
         description: "The foundational commentaries on the Upanishads, Brahma Sutras, and Bhagavad Gita.",
         href: '/advait/bhasya',
-        external: true,
+        external: false,
       },
     ]
   },
@@ -155,99 +156,105 @@ export default function AdvaitPage() {
   const content = pageContent[language];
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        
-        <div className="flex justify-center mb-8">
-            <div className="inline-flex rounded-md shadow-sm">
-                <Button 
-                    onClick={() => setLanguage('en')} 
-                    className={`rounded-r-none ${language === 'en' ? 'bg-primary text-primary-foreground' : 'bg-secondary'}`}
-                >
-                    English
-                </Button>
-                <Button 
-                    onClick={() => setLanguage('hi')} 
-                    className={`rounded-l-none ${language === 'hi' ? 'bg-primary text-primary-foreground' : 'bg-secondary'}`}
-                >
-                    हिंदी
-                </Button>
-            </div>
-        </div>
+    <>
+      <Head>
+        <title>Advaita Vedanta | Harsh Parmar</title>
+        <meta name="description" content="An introduction to Advaita Vedanta, the non-dual philosophy, and its influence on the life and work of Harsh Parmar." />
+      </Head>
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          
+          <div className="flex justify-center mb-8">
+              <div className="inline-flex rounded-md shadow-sm">
+                  <Button 
+                      onClick={() => setLanguage('en')} 
+                      className={`rounded-r-none ${language === 'en' ? 'bg-primary text-primary-foreground' : 'bg-secondary'}`}
+                  >
+                      English
+                  </Button>
+                  <Button 
+                      onClick={() => setLanguage('hi')} 
+                      className={`rounded-l-none ${language === 'hi' ? 'bg-primary text-primary-foreground' : 'bg-secondary'}`}
+                  >
+                      हिंदी
+                  </Button>
+              </div>
+          </div>
 
-        <motion.header 
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h1 className="font-headline text-5xl md:text-7xl mb-4">{content.title}</h1>
-          <p className="text-3xl font-headline text-primary">तत्त्वमसि</p>
-          <p className="text-xl text-muted-foreground mt-2">{content.tagline}</p>
-        </motion.header>
-        
-        <motion.div className="mb-16" {...sectionAnimation}>
-            <Image 
-                src="/AdvaitVedant.png"
-                alt="Himalayan mountains"
-                width={1200}
-                height={500}
-                className="rounded-lg object-cover"
-                data-ai-hint="himalayas landscape"
-            />
-        </motion.div>
+          <motion.header 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <h1 className="font-headline text-5xl md:text-7xl mb-4">{content.title}</h1>
+            <p className="text-3xl font-headline text-primary">तत्त्वमसि</p>
+            <p className="text-xl text-muted-foreground mt-2">{content.tagline}</p>
+          </motion.header>
+          
+          <motion.div className="mb-16" {...sectionAnimation}>
+              <Image 
+                  src="https://placehold.co/1200x500.png"
+                  alt="Himalayan mountains"
+                  width={1200}
+                  height={500}
+                  className="rounded-lg object-cover"
+                  data-ai-hint="himalayas landscape"
+              />
+          </motion.div>
 
-        <article className="prose prose-invert lg:prose-xl mx-auto text-muted-foreground space-y-12">
-          <motion.section className="text-center border-b border-border pb-10" {...sectionAnimation}>
-              <Feather className="h-10 w-10 text-primary mx-auto mb-4" />
-              <h2 className="font-headline text-4xl">{content.myPathTitle}</h2>
+          <article className="prose prose-invert lg:prose-xl mx-auto text-muted-foreground space-y-12">
+            <motion.section className="text-center border-b border-border pb-10" {...sectionAnimation}>
+                <Feather className="h-10 w-10 text-primary mx-auto mb-4" />
+                <h2 className="font-headline text-4xl">{content.myPathTitle}</h2>
+                <p>
+                  {content.myPathContent}
+                </p>
+            </motion.section>
+
+            <motion.section {...sectionAnimation}>
+              <h2 className="font-headline text-4xl text-center">{content.oceanTitle}</h2>
               <p>
-                {content.myPathContent}
+              {content.oceanContent1}
               </p>
+              <p>
+                {content.oceanContent2}
+              </p>
+            </motion.section>
+
+            <motion.section {...sectionAnimation}>
+              <h2 className="font-headline text-4xl text-center">{content.shankaraIntroTitle}</h2>
+              <p className="text-center">
+              {content.shankaraIntroContent}
+              </p>
+            </motion.section>
+          </article>
+
+          <motion.section className="my-20" {...sectionAnimation}>
+              <h2 className="font-headline text-4xl text-center mb-12">{content.timelineTitle}</h2>
+              <ShankaracharyaTimeline timelineEvents={content.timelineEvents} />
+          </motion.section>
+          
+          <motion.section className="mt-20" {...sectionAnimation}>
+              <h2 className="font-headline text-4xl text-center mb-10">{content.resourcesTitle}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {content.resources.map((resource) => (
+                      <Link href={resource.href} key={resource.title} target={resource.external ? '_blank' : '_self'} rel="noopener noreferrer">
+                          <div className="bg-card/50 p-6 rounded-lg border hover:border-primary transition-colors duration-300 flex flex-col h-full">
+                              <div className="flex justify-between items-start mb-4">
+                                  <BookOpen className="h-8 w-8 text-primary" />
+                                  {resource.external && <ExternalLink className="h-4 w-4 text-muted-foreground" />}
+                              </div>
+                              <h3 className="font-headline text-2xl mb-2">{resource.title}</h3>
+                              <p className="text-muted-foreground flex-grow">{resource.description}</p>
+                          </div>
+                      </Link>
+                  ))}
+              </div>
           </motion.section>
 
-          <motion.section {...sectionAnimation}>
-            <h2 className="font-headline text-4xl text-center">{content.oceanTitle}</h2>
-            <p>
-             {content.oceanContent1}
-            </p>
-            <p>
-              {content.oceanContent2}
-            </p>
-          </motion.section>
-
-          <motion.section {...sectionAnimation}>
-            <h2 className="font-headline text-4xl text-center">{content.shankaraIntroTitle}</h2>
-            <p className="text-center">
-             {content.shankaraIntroContent}
-            </p>
-          </motion.section>
-        </article>
-
-        <motion.section className="my-20" {...sectionAnimation}>
-            <h2 className="font-headline text-4xl text-center mb-12">{content.timelineTitle}</h2>
-            <ShankaracharyaTimeline timelineEvents={content.timelineEvents} />
-        </motion.section>
-        
-        <motion.section className="mt-20" {...sectionAnimation}>
-            <h2 className="font-headline text-4xl text-center mb-10">{content.resourcesTitle}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {content.resources.map((resource) => (
-                    <Link href={resource.href} key={resource.title} target={resource.external ? '_blank' : '_self'} rel="noopener noreferrer">
-                        <div className="bg-card/50 p-6 rounded-lg border hover:border-primary transition-colors duration-300 flex flex-col h-full">
-                            <div className="flex justify-between items-start mb-4">
-                                <BookOpen className="h-8 w-8 text-primary" />
-                                {resource.external && <ExternalLink className="h-4 w-4 text-muted-foreground" />}
-                            </div>
-                            <h3 className="font-headline text-2xl mb-2">{resource.title}</h3>
-                            <p className="text-muted-foreground flex-grow">{resource.description}</p>
-                        </div>
-                    </Link>
-                ))}
-            </div>
-        </motion.section>
-
+        </div>
       </div>
-    </div>
+    </>
   );
 }

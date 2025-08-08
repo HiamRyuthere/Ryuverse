@@ -2,27 +2,48 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { CheckCircle } from "lucide-react";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Check, Code, Palette, BrainCircuit } from "lucide-react";
 import { motion } from 'framer-motion';
 import Link from "next/link";
+import Head from "next/head";
 
-const proBonoCauses = [
+const services = [
   {
-    name: "Environment",
-    description: "Supporting initiatives focused on climate action, sustainability, and the protection of our planet's ecosystems. Technology can play a crucial role in monitoring, analysis, and promoting environmental awareness.",
-    href: "https://www.un.org/en/climatechange/what-is-climate-change",
+    icon: <Palette className="h-8 w-8 text-primary" />,
+    title: "Minimalist Web Development",
+    description: "I will design and build a clean, fast, and aesthetically pleasing website for you or your business, just like this one. Focus on exceptional user experience and elegant design.",
+    features: [
+      "Next.js & React Development",
+      "Tailwind CSS for sleek styling",
+      "Responsive on all devices",
+      "Performance optimization"
+    ],
+    price: "Starts at $500",
   },
   {
-    name: "Humanism",
-    description: "Contributing to projects that uphold human dignity, rights, and ethical progress. I believe in leveraging technology to foster a more just, compassionate, and equitable global society.",
-    href: "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
+    icon: <Code className="h-8 w-8 text-primary" />,
+    title: "Backend Architecture",
+    description: "Need a robust, scalable, and secure backend? I specialize in building powerful systems using Spring Boot and Java for complex applications.",
+    features: [
+      "RESTful API Development",
+      "Spring Security Implementation",
+      "Database Design & JPA",
+      "Scalable Microservices"
+    ],
+    price: "Starts at $800",
   },
-  {
-    name: "Philosophy",
-    description: "Collaborating with organizations that promote wisdom, introspection, and philosophical inquiry. I am passionate about making timeless teachings, like those of Advaita Vedanta, accessible through modern digital platforms.",
-    href: "https://www.acharyaprashant.org",
+   {
+    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+    title: "Code & Philosophy Audit",
+    description: "A unique service where I review your project for technical quality, clarity, and purpose. I'll provide actionable feedback to make your code more elegant and maintainable.",
+    features: [
+      "Code Readability Review",
+      "Simplicity & Efficiency Analysis",
+      "Architectural Suggestions",
+      "Report on 'Code as Poetry' principles"
+    ],
+    price: "Starts at $250",
   }
 ];
 
@@ -35,6 +56,11 @@ const sectionAnimation = {
 
 export default function HireMePage() {
   return (
+    <>
+    <Head>
+        <title>Services | Harsh Parmar</title>
+        <meta name="description" content="Offering professional services in minimalist web development, backend architecture with Spring Boot, and unique code & philosophy audits." />
+    </Head>
     <div className="container mx-auto px-4 py-16">
       <motion.header 
         className="text-center mb-12"
@@ -42,95 +68,55 @@ export default function HireMePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <h1 className="font-headline text-5xl md:text-7xl mb-4">Hire Me</h1>
-        <p className="text-xl text-muted-foreground">Let's build something meaningful together.</p>
+        <h1 className="font-headline text-5xl md:text-7xl mb-4">Services</h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Leverage my expertise in technology and design to build something exceptional.</p>
       </motion.header>
 
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
         {...sectionAnimation}
       >
-        <Card className="border-green-500/50">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 font-headline text-2xl">
-              <CheckCircle className="h-6 w-6 text-green-500" />
-              Why You Should Hire Me
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-muted-foreground">
-            <p>I bring a unique blend of technical expertise and a philosophical approach to my work. My focus is on creating solutions that are not just functional, but also elegant, clean, and built to last.</p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li><strong>Clean & Minimalist Code:</strong> I write efficient, readable, and maintainable code, reducing complexity and long-term costs.</li>
-              <li><strong>Full-Stack Proficiency:</strong> From robust Spring Boot backends to responsive Next.js frontends, I can handle the entire development lifecycle.</li>
-              <li><strong>Problem-Solver's Mindset:</strong> I excel at breaking down complex problems and architecting solutions that are both scalable and secure.</li>
-              <li><strong>Design Sensibility:</strong> I value user experience and create intuitive, aesthetically pleasing interfaces.</li>
-            </ul>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardHeader>
-            <CardTitle className="font-headline text-2xl">
-              Ensuring a Good Fit
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-muted-foreground">
-              <p>To create the best work, a strong partnership is key. I thrive in environments built on mutual respect, clear communication, and shared values. To ensure we're aligned, I typically avoid projects that:</p>
-             <ul className="list-disc pl-5 space-y-2">
-              <li>Are purely profit-driven with no regard for ethical considerations.</li>
-              <li>Lack a clear vision or operate in a chaotic, unstructured work environment.</li>
-              <li>Prioritize speed over quality, leading to technical debt and poor user experience.</li>
-              <li>Involve industries I'm not comfortable with, such as gambling, predatory finance, or anything that harms society or the environment.</li>
-             </ul>
-          </CardContent>
-        </Card>
+        {services.map((service) => (
+            <Card key={service.title} className="flex flex-col">
+                <CardHeader>
+                    <div className="mb-4">{service.icon}</div>
+                    <CardTitle className="font-headline text-3xl">{service.title}</CardTitle>
+                    <CardDescription>{service.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                    <ul className="space-y-3 text-muted-foreground">
+                        {service.features.map((feature) => (
+                            <li key={feature} className="flex items-center gap-2">
+                                <Check className="h-4 w-4 text-green-500" />
+                                <span>{feature}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </CardContent>
+                <CardFooter className="flex flex-col items-start gap-4">
+                    <p className="text-lg font-semibold">{service.price}</p>
+                    <Button asChild className="w-full">
+                        <Link href="/contact">Book a Consultation</Link>
+                    </Button>
+                </CardFooter>
+            </Card>
+        ))}
       </motion.div>
-
+      
       <motion.section 
         className="text-center bg-card/50 border rounded-lg p-8"
         {...sectionAnimation}
       >
-          <h2 className="font-headline text-3xl mb-4">Technology for a Better World</h2>
+          <h2 className="font-headline text-3xl mb-4">Pro Bono Work</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-              I am passionate about using my skills for good. I am willing to work for free for non-profit organizations dedicated to the following causes. If your project aligns with these values, please reach out.
+              I am passionate about using my skills for good. I am willing to work for free for non-profit organizations dedicated to causes like Environmentalism, Humanism, and Philosophy. If your project aligns with these values, please reach out.
           </p>
-          <div className="flex justify-center flex-wrap gap-4 text-lg">
-            {proBonoCauses.map((cause, index) => (
-              <Dialog key={cause.name}>
-                <DialogTrigger asChild>
-                  <span className="text-primary hover:underline cursor-pointer">{cause.name}</span>
-                </DialogTrigger>
-                {index < proBonoCauses.length -1 && <span className="text-muted-foreground">&bull;</span>}
-                <DialogContent className="sm:max-w-[425px]">
-                  <DialogHeader>
-                    <DialogTitle className="font-headline text-2xl">{cause.name}</DialogTitle>
-                    <DialogDescription>
-                      {cause.description}
-                    </DialogDescription>
-                  </DialogHeader>
-                  <DialogFooter>
-                    <Button asChild>
-                      <a href={cause.href} target="_blank" rel="noopener noreferrer">Learn More</a>
-                    </Button>
-                  </DialogFooter>
-                </DialogContent>
-              </Dialog>
-            ))}
-          </div>
+          <Button asChild variant="secondary">
+              <Link href="/contact">Discuss a Pro Bono Project</Link>
+          </Button>
       </motion.section>
 
-      <motion.div 
-        className="text-center mt-12"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-          <Button asChild size="lg">
-              <Link href="/contact">Contact Me</Link>
-          </Button>
-      </motion.div>
-
     </div>
+    </>
   );
 }

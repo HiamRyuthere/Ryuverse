@@ -23,6 +23,13 @@ export default function DisclaimerPage() {
            <p>
             The thoughts and opinions expressed here are my own and do not reflect the views of any organization I might be affiliated with. The content is for informational and educational purposes and should not be taken as professional advice. If you need professional advice, please consult an expert in the relevant field.
            </p>
+           <h2 className="font-headline text-3xl">Content &amp; Attribution</h2>
+            <p>
+              My intention is to use only original content or materials that are open-source and free to use. I have a strong faith in the open-source community and make every effort to respect intellectual property rights.
+            </p>
+            <p>
+              However, if you believe I have made a mistake or used something that belongs to you without proper permission or credit, please contact me immediately. I will address your concern promptly. You can reach me at <a href="mailto:hiamryu@duck.com" className="text-primary hover:underline">hiamryu@duck.com</a>.
+            </p>
         </article>
       </div>
     </div>

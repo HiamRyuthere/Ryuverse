@@ -5,21 +5,30 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import ConsentPopup from '@/components/consent-popup';
 import { ThemeProvider } from '@/components/theme-provider';
+import WelcomeNotice from '@/components/welcome-notice';
 
 export const metadata: Metadata = {
   title: {
-    default: 'RyuVerse | Harsh Parmar',
-    template: '%s | RyuVerse',
+    default: 'Harsh Parmar | Minimalist, Poet & Programmer',
+    template: '%s | Harsh Parmar',
   },
-  description: 'The personal website of Harsh Parmar, a minimalist, poet, and programmer. Exploring Advaita Vedanta, technology, and minimalism.',
-  keywords: ['Harsh Parmar', 'RyuVerse', 'Ryu', 'Minimalism', 'Poetry', 'Programming', 'Advaita Vedanta', 'Blog', 'Portfolio'],
+  description: 'The personal website of Harsh Parmar, a minimalist, poet, and programmer. Exploring Advaita Vedanta, technology, and the elegance of simplicity.',
+  keywords: ['Harsh Parmar', 'RyuVerse', 'Ryu', 'Minimalism', 'Poetry', 'Programming', 'Advaita Vedanta', 'Blog', 'Portfolio', 'Software Developer'],
   authors: [{ name: 'Harsh Parmar', url: 'https://hiamryu.com' }],
   creator: 'Harsh Parmar',
   openGraph: {
-    title: 'RyuVerse | Harsh Parmar',
-    description: 'A Minimalist, Poet & Programmer.',
+    title: 'Harsh Parmar | Minimalist, Poet & Programmer',
+    description: 'The personal website of Harsh Parmar, exploring technology, philosophy, and creative expression.',
     url: 'https://hiamryu.com',
     siteName: 'RyuVerse',
+    images: [
+      {
+        url: 'https://placehold.co/1200x630.png',
+        width: 1200,
+        height: 630,
+        alt: 'Harsh Parmar - RyuVerse',
+      },
+    ],
     locale: 'en_US',
     type: 'website',
   },
@@ -54,6 +63,7 @@ export default function RootLayout({
             </div>
             <ConsentPopup />
             <Toaster />
+            <WelcomeNotice />
         </ThemeProvider>
       </body>
     </html>

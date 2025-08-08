@@ -1,0 +1,108 @@
+/* Import the Inter font used in the resume */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Basic setup for printing */
+@page { 
+  size: A4; 
+  margin: 0; 
+}
+
+body {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styles for resume elements */
+.bg-gray-100 { background-color: #f3f4f6; }
+.text-gray-900 { color: #111827; }
+.p-8 { padding: 2rem; }
+.max-w-4xl { max-width: 896px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.bg-white { background-color: #ffffff; }
+.shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+.rounded-lg { border-radius: 0.5rem; }
+.overflow-hidden { overflow: hidden; }
+
+/* Grid and layout */
+.grid { display: grid; }
+.grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.col-span-4 { grid-column: span 4 / span 4; }
+.col-span-8 { grid-column: span 8 / span 8; }
+
+/* Sidebar styles */
+.bg-gray-900 { background-color: #111827; }
+.text-white { color: #ffffff; }
+
+/* Typography */
+.mb-10 { margin-bottom: 2.5rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.font-bold { font-weight: 700; }
+.tracking-tight { letter-spacing: -0.025em; }
+.text-gray-400 { color: #9ca3af; }
+.mt-1 { margin-top: 0.25rem; }
+.space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 2rem; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.font-semibold { font-weight: 600; }
+.uppercase { text-transform: uppercase; }
+.tracking-wider { letter-spacing: 0.05em; }
+.pb-2 { padding-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; }
+.text-gray-300 { color: #d1d5db; }
+.list-disc { list-style-type: disc; }
+.list-inside { list-style-position: inside; }
+
+/* Borders */
+.border-b { border-bottom-width: 1px; }
+.border-gray-700 { border-color: #374151; }
+.border-b-2 { border-bottom-width: 2px; }
+.border-gray-200 { border-color: #e5e7eb; }
+
+
+/* Main content styles */
+.p-10 { padding: 2.5rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.mb-4 { margin-bottom: 1rem; }
+.text-gray-800 { color: #1f2937; }
+.text-gray-700 { color: #374151; }
+.leading-relaxed { line-height: 1.625; }
+
+/* Flexbox and alignment */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.gap-3 { gap: 0.75rem; }
+.gap-2 { gap: 0.5rem; }
+.space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem; }
+.space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.5rem; }
+
+/* Sizing and spacing */
+.w-4 { width: 1rem; }
+.h-4 { height: 1rem; }
+.h-5 { height: 1.25rem; }
+.w-5 { width: 1.25rem; }
+.h-8 { height: 2rem; }
+.w-8 { width: 2rem; }
+.mt-half { margin-top: 0.125rem; }
+.mr-4 { margin-right: 1rem; }
+.shrink-0 { flex-shrink: 0; }
+
+/* Colors */
+.text-primary { color: #8A2BE2; } /* A nice purple for the theme */
+
+/* Timeline styles */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.left-3_5 { left: 0.875rem; }
+.h-full { height: 100%; }
+.w-px { width: 1px; }
+.bg-gray-200 { background-color: #e5e7eb; }
+.pl-12 { padding-left: 3rem; }
+.left-0 { left: 0; }
+.top-1_5 { top: 0.375rem; }
+.rounded-full { border-radius: 9999px; }
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.text-gray-600 { color: #4b5563; }

@@ -17,7 +17,7 @@ export default function OtherIssuePage() {
             Your feedback is valuable in helping me improve this website. When reporting an issue, please be as detailed as possible.
           </p>
           <p>
-            Please send an email to <a href="mailto:hiamryu@outlook.com" className="text-primary hover:underline">hiamryu@outlook.com</a> with the subject line "Website Issue Report". Include the following details in your message:
+            Please send an email to <a href="mailto:hiamryu@duck.com" className="text-primary hover:underline">hiamryu@duck.com</a> with the subject line "Website Issue Report". Include the following details in your message:
           </p>
           <ul>
             <li>A clear and concise description of the issue.</li>
