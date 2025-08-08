@@ -65,7 +65,7 @@ const pageContent = {
       {
         title: 'Acharya Prashant',
         description: 'A contemporary spiritual teacher offering direct and powerful guidance based on Advaitic wisdom.',
-        href: 'https://acharyaprashant.org',
+        href: 'https://acharyaprashant.org/',
         external: true,
       },
       {
@@ -194,7 +194,7 @@ export default function AdvaitPage() {
           
           <motion.div className="mb-16" {...sectionAnimation}>
               <Image 
-                  src="https://placehold.co/1200x500.png"
+                  src="/AdvaitVedant.png"
                   alt="Himalayan mountains"
                   width={1200}
                   height={500}
