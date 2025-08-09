@@ -2,50 +2,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Code, Palette, BrainCircuit } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ThumbsUp, ThumbsDown, Sparkles, Handshake, Sprout, Heart, Brain, ExternalLink, CheckCircle, XCircle, Code, Telescope, Zap, Shield } from "lucide-react";
 import { motion } from 'framer-motion';
 import Link from "next/link";
 import Head from "next/head";
-
-const services = [
-  {
-    icon: <Palette className="h-8 w-8 text-primary" />,
-    title: "Minimalist Web Development",
-    description: "I will design and build a clean, fast, and aesthetically pleasing website for you or your business, just like this one. Focus on exceptional user experience and elegant design.",
-    features: [
-      "Next.js & React Development",
-      "Tailwind CSS for sleek styling",
-      "Responsive on all devices",
-      "Performance optimization"
-    ],
-    price: "Starts at $500",
-  },
-  {
-    icon: <Code className="h-8 w-8 text-primary" />,
-    title: "Backend Architecture",
-    description: "Need a robust, scalable, and secure backend? I specialize in building powerful systems using Spring Boot and Java for complex applications.",
-    features: [
-      "RESTful API Development",
-      "Spring Security Implementation",
-      "Database Design & JPA",
-      "Scalable Microservices"
-    ],
-    price: "Starts at $800",
-  },
-   {
-    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
-    title: "Code & Philosophy Audit",
-    description: "A unique service where I review your project for technical quality, clarity, and purpose. I'll provide actionable feedback to make your code more elegant and maintainable.",
-    features: [
-      "Code Readability Review",
-      "Simplicity & Efficiency Analysis",
-      "Architectural Suggestions",
-      "Report on 'Code as Poetry' principles"
-    ],
-    price: "Starts at $250",
-  }
-];
 
 const sectionAnimation = {
   initial: { opacity: 0, y: 50 },
@@ -54,66 +15,119 @@ const sectionAnimation = {
   transition: { duration: 0.7, ease: "easeOut" }
 };
 
+const hireReasons = [
+    { icon: <Zap className="h-5 w-5 text-green-400" />, text: "Passionate and curious developer, enthusiastic about building things that work well." },
+    { icon: <Code className="h-5 w-5 text-green-400" />, text: "Primary expertise in robust backends with Spring Boot, with a strong foundation in HTML, CSS, and JavaScript." },
+    { icon: <Telescope className="h-5 w-5 text-green-400" />, text: "A deep desire to learn, grow, and build feature-rich products." }
+];
+
+const notAlignReasons = [
+    { icon: <Shield className="h-5 w-5 text-red-400" />, text: "Projects in ethically ambiguous domains. I am committed to working on projects that have a positive and clear purpose." },
+    { icon: <Handshake className="h-5 w-5 text-red-400" />, text: "A culture that doesn't prioritize respect, curiosity, and a shared commitment to positive impact." },
+];
+
+
 export default function HireMePage() {
   return (
     <>
     <Head>
-        <title>Services | Harsh Parmar</title>
-        <meta name="description" content="Offering professional services in minimalist web development, backend architecture with Spring Boot, and unique code & philosophy audits." />
+        <title>Hire Me | Harsh Parmar</title>
+        <meta name="description" content="A transparent look at my skills, my approach to work, and what drives me as a developer." />
     </Head>
     <div className="container mx-auto px-4 py-16">
       <motion.header 
-        className="text-center mb-12"
+        className="text-center mb-16"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <h1 className="font-headline text-5xl md:text-7xl mb-4">Services</h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Leverage my expertise in technology and design to build something exceptional.</p>
+        <h1 className="font-headline text-5xl md:text-7xl mb-4">Hire Me</h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">A transparent look at where I shine and what I value in a project.</p>
       </motion.header>
 
-      <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
-        {...sectionAnimation}
-      >
-        {services.map((service) => (
-            <Card key={service.title} className="flex flex-col">
-                <CardHeader>
-                    <div className="mb-4">{service.icon}</div>
-                    <CardTitle className="font-headline text-3xl">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                    <ul className="space-y-3 text-muted-foreground">
-                        {service.features.map((feature) => (
-                            <li key={feature} className="flex items-center gap-2">
-                                <Check className="h-4 w-4 text-green-500" />
-                                <span>{feature}</span>
-                            </li>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <motion.div {...sectionAnimation}>
+              <Card className="h-full border-green-500/50">
+                  <CardHeader>
+                      <div className="flex items-center gap-4">
+                          <ThumbsUp className="h-8 w-8 text-green-500" />
+                          <CardTitle className="font-headline text-3xl">Why You Should Hire Me</CardTitle>
+                      </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                      <ul className="space-y-3 text-muted-foreground">
+                        {hireReasons.map((reason, index) => (
+                           <li key={index} className="flex items-start gap-3">
+                                {reason.icon}
+                                <span>{reason.text}</span>
+                           </li>
                         ))}
-                    </ul>
-                </CardContent>
-                <CardFooter className="flex flex-col items-start gap-4">
-                    <p className="text-lg font-semibold">{service.price}</p>
-                    <Button asChild className="w-full">
-                        <Link href="/contact">Book a Consultation</Link>
-                    </Button>
-                </CardFooter>
-            </Card>
-        ))}
-      </motion.div>
+                      </ul>
+                  </CardContent>
+              </Card>
+          </motion.div>
+          <motion.div {...sectionAnimation} transition={{...sectionAnimation.transition, delay: 0.2}}>
+               <Card className="h-full border-red-500/50">
+                  <CardHeader>
+                      <div className="flex items-center gap-4">
+                        <ThumbsDown className="h-8 w-8 text-red-500" />
+                        <CardTitle className="font-headline text-3xl">Where We Might Not Align</CardTitle>
+                      </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground">To ensure we both succeed, it's important to be upfront. We may not be the best fit for:</p>
+                      <ul className="space-y-3 text-muted-foreground">
+                        {notAlignReasons.map((reason, index) => (
+                           <li key={index} className="flex items-start gap-3">
+                                {reason.icon}
+                                <span>{reason.text}</span>
+                           </li>
+                        ))}
+                      </ul>
+                  </CardContent>
+              </Card>
+          </motion.div>
+      </div>
       
       <motion.section 
-        className="text-center bg-card/50 border rounded-lg p-8"
+        className="text-center bg-card/50 border rounded-lg p-8 lg:p-12"
         {...sectionAnimation}
       >
-          <h2 className="font-headline text-3xl mb-4">Pro Bono Work</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-              I am passionate about using my skills for good. I am willing to work for free for non-profit organizations dedicated to causes like Environmentalism, Humanism, and Philosophy. If your project aligns with these values, please reach out.
+          <div className="flex justify-center mb-6">
+            <Sparkles className="h-10 w-10 text-primary" />
+          </div>
+          <h2 className="font-headline text-4xl mb-4">Technology for a Better World</h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto mb-8">
+              I am passionate about using technology as a force for good. I offer my skills pro bono to non-profit organizations and projects that are making a positive impact in the fields of <strong className="text-green-400">Environmentalism</strong>, <strong className="text-sky-400">Humanism</strong>, and <strong className="text-amber-400">Philosophy</strong>.
           </p>
-          <Button asChild variant="secondary">
-              <Link href="/contact">Discuss a Pro Bono Project</Link>
-          </Button>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-8 max-w-4xl mx-auto">
+              <div className="bg-background/50 p-4 rounded-lg flex flex-col">
+                  <h3 className="font-semibold flex items-center gap-2 mb-2"><Sprout className="text-green-400"/>Environmentalism</h3>
+                  <p className="text-sm text-muted-foreground flex-grow">Projects focused on conservation, climate action, and sustainability.</p>
+                  <Button variant="link" asChild className="p-0 h-auto justify-start mt-2 text-green-400">
+                    <a href="https://www.un.org/en/climatechange/what-is-climate-change" target="_blank" rel="noopener noreferrer">Learn More <ExternalLink className="ml-2 h-4 w-4"/></a>
+                  </Button>
+              </div>
+              <div className="bg-background/50 p-4 rounded-lg flex flex-col">
+                  <h3 className="font-semibold flex items-center gap-2 mb-2"><Heart className="text-sky-400"/>Humanism</h3>
+                  <p className="text-sm text-muted-foreground flex-grow">Initiatives that promote human well-being, ethics, and the beauty of being human.</p>
+                   <Button variant="link" asChild className="p-0 h-auto justify-start mt-2 text-sky-400">
+                    <a href="https://www.un.org/en/about-us/universal-declaration-of-human-rights" target="_blank" rel="noopener noreferrer">Learn More <ExternalLink className="ml-2 h-4 w-4"/></a>
+                  </Button>
+              </div>
+               <div className="bg-background/50 p-4 rounded-lg flex flex-col">
+                  <h3 className="font-semibold flex items-center gap-2 mb-2"><Brain className="text-amber-400"/>Philosophy</h3>
+                  <p className="text-sm text-muted-foreground flex-grow">Work that makes wisdom and critical thinking more accessible to all.</p>
+                   <Button variant="link" asChild className="p-0 h-auto justify-start mt-2 text-amber-400">
+                    <a href="https://acharyaprashant.org/en/articles/what-really-is-vedanta-is-it-relevant-today-1_59c3e1f" target="_blank" rel="noopener noreferrer">Learn More <ExternalLink className="ml-2 h-4 w-4"/></a>
+                  </Button>
+               </div>
+          </div>
+          <div className="flex justify-center gap-4 mt-12">
+            <Button asChild>
+                <Link href="/contact">Discuss a Project for Good</Link>
+            </Button>
+          </div>
       </motion.section>
 
     </div>
