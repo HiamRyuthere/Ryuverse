@@ -73,7 +73,7 @@ export default function ResumePage() {
                       <a href="mailto:hiamryu@duck.com" className="flex items-center gap-2 hover:text-primary" title="Email">
                           <Mail className="h-4 w-4" />
                       </a>
-                      <a href="https://linkedin.com/in/Harsh-Parmar-2212b2201" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary" title="LinkedIn">
+                      <a href="https://www.linkedin.com/in/harsh-parmar-2a33062b4/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary" title="LinkedIn">
                           <Linkedin className="h-4 w-4" />
                       </a>
                       <a href="https://github.com/hiamryuthere" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary" title="GitHub">

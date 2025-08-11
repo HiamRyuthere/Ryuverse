@@ -20,7 +20,7 @@ const contactMethods = [
         icon: <Linkedin className="h-8 w-8 text-primary" />,
         title: "LinkedIn",
         content: "For professional inquiries, collaborations, and to view my detailed work experience.",
-        href: "https://linkedin.com/in/Harsh-Parmar-2212b2201",
+        href: "https://www.linkedin.com/in/harsh-parmar-2a33062b4/",
         cta: "Connect on LinkedIn",
         external: true,
     },
