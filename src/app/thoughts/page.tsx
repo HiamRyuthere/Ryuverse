@@ -8,6 +8,14 @@ import Head from "next/head";
 
 const thoughts = [
   {
+    slug: "AI-ADDICTION",
+    title: "Artificial Intelligence: A New Addiction",
+    date: "September 12, 2025",
+    tags: ["AI", "Addiction", "Wisely use of ai"],
+    excerpt:
+      "Exploring how ai can be bad for you in the digital world. Are we becoming too dependent on AI for emotional support? Let's discuss the implications of AI addiction.",
+  },
+  {
     slug: "the-ai-hype-train",
     title: "The AI Hype Train: Are We All Aboard?",
     date: "August 18, 2025",
@@ -38,14 +46,6 @@ const thoughts = [
     tags: ["AI", "Environment", "Technology"],
     excerpt:
       "Behind the magic of AI lies a world of data centers, energy consumption, and e-waste. Let's look at the environmental impact that we don't often talk about.",
-  },
-  {
-    slug: "AI-ADDICTION",
-    title: "Artificial Intelligence: A New Addiction",
-    date: "September 12, 2025",
-    tags: ["AI", "Addiction", "Wisely use of ai"],
-    excerpt:
-      "Exploring how ai can be bad for you in the digital world. Are we becoming too dependent on AI for emotional support? Let's discuss the implications of AI addiction.",
   },
 ];
 

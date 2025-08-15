@@ -98,9 +98,9 @@ export default function HireMePage() {
           </div>
           <h2 className="font-headline text-4xl mb-4">Technology for a Better World</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto mb-8">
-              I am passionate about using technology as a force for good. I offer my skills pro bono to non-profit organizations and projects that are making a positive impact in the fields of <strong className="text-green-400">Environmentalism</strong>, <strong className="text-sky-400">Humanism</strong>, and <strong className="text-amber-400">Philosophy</strong>.
+              I am passionate about using technology as a force for good. I offer my skills pro bono to non-profit organizations and projects that are making a positive impact.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left mb-8 max-w-6xl mx-auto">
               <div className="bg-background/50 p-4 rounded-lg flex flex-col">
                   <h3 className="font-semibold flex items-center gap-2 mb-2"><Sprout className="text-green-400"/>Environmentalism</h3>
                   <p className="text-sm text-muted-foreground flex-grow">Projects focused on conservation, climate action, and sustainability.</p>
@@ -120,6 +120,13 @@ export default function HireMePage() {
                   <p className="text-sm text-muted-foreground flex-grow">Work that makes wisdom and critical thinking more accessible to all.</p>
                    <Button variant="link" asChild className="p-0 h-auto justify-start mt-2 text-amber-400">
                     <a href="https://acharyaprashant.org/en/articles/what-really-is-vedanta-is-it-relevant-today-1_59c3e1f" target="_blank" rel="noopener noreferrer">Learn More <ExternalLink className="ml-2 h-4 w-4"/></a>
+                  </Button>
+               </div>
+               <div className="bg-background/50 p-4 rounded-lg flex flex-col">
+                  <h3 className="font-semibold flex items-center gap-2 mb-2"><Heart className="text-orange-500"/>For India</h3>
+                  <p className="text-sm text-muted-foreground flex-grow">I want to contribute to our beautiful country. If you're working on a project for India, I'm ready to help.</p>
+                   <Button variant="link" asChild className="p-0 h-auto justify-start mt-2 text-orange-500">
+                    <Link href="/contact">Get in touch <ExternalLink className="ml-2 h-4 w-4"/></Link>
                   </Button>
                </div>
           </div>
