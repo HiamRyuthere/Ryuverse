@@ -23,13 +23,13 @@ export default function WelcomeNotice() {
                 title: (
                     <div className="flex items-center gap-2">
                     <Terminal className="h-5 w-5" />
-                    <span className="font-headline">A New Feature Has Arrived!</span>
+                    <span className="font-headline">I've open the source code </span>
                     </div>
                 ),
-                description: "A terminal is now available for navigating the site. Check it out and let me know what you think!",
+                description: "Ryuverse is open source! Feel free to explore the codebase and contribute on GitHub.",
                 action: (
                     <Button asChild>
-                    <Link href="/terminal">Launch Terminal</Link>
+                    <Link href="https://github.com/HiamRyuthere/Ryuverse/">See source code</Link>
                     </Button>
                 ),
             });
