@@ -1,5 +1,3 @@
-# Firebase Studio
+A personal project that is centralised thing to keep presence over the internet. 
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+It have personal portfolio, blogs and thoughts, Art forms, List of all social places I'm available, professional summary and many experimental features like terminal. 
