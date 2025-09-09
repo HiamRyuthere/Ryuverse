@@ -23,7 +23,7 @@ export default function WelcomeNotice() {
                 title: (
                     <div className="flex items-center gap-2">
                     <Terminal className="h-5 w-5" />
-                    <span className="font-headline">I've open the source code </span>
+                    <span className="font-headline">Source code is now available</span>
                     </div>
                 ),
                 description: "Ryuverse is open source! Feel free to explore the codebase and contribute on GitHub.",

@@ -46,7 +46,7 @@ export default function MusicPage() {
               <p>I still remember that moment—stepping onto that stage, facing a huge crowd, alone. No friends in the audience. Just me, my verses, and the vibe. And when I rapped... the energy was electric. That performance brought my confidence back like a rising beat drop. And since then? I’ve never looked back. The mic is still in my hand, the passion still burns. And the journey continues— One verse, one vibe, one dream at a time.</p>
             </article>
             <Button asChild className="mt-6">
-              <Link href="#">You Can Hear Me Here</Link>
+              <Link href="instagram.com/mayimweird">You Can Hear Me Here</Link>
             </Button>
           </div>
           <div className="order-1 md:order-2 flex justify-center">
@@ -77,7 +77,7 @@ export default function MusicPage() {
           </article>
           <div className="text-center mt-6">
               <Button asChild>
-                  <Link href="#">You can read it here: My Poetry</Link>
+                  <Link href="instagram.com/mayimweird">You can read it here: My Poetry</Link>
               </Button>
           </div>
         </motion.section>

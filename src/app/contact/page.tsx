@@ -1,8 +1,7 @@
-
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Github, Linkedin, Mail, Send, Instagram } from "lucide-react";
+import { Github, Linkedin, Mail, Send, Instagram, MessageCircleDashed } from "lucide-react";
 import { motion } from 'framer-motion';
 import Link from "next/link";
 import Head from "next/head";
@@ -46,6 +45,14 @@ const contactMethods = [
         content: "For direct and quick conversations. Feel free to reach out for a chat.",
         href: "https://t.me/hiamryu",
         cta: "Message on Telegram",
+        external: true,
+    },
+    {
+        icon: <MessageCircleDashed className="h-8 w-8 text-primary" />,
+        title: "Signal",
+        content: "For private , secure & peace of mind conversations",
+        href: "https://signal.me/#eu/iSGAKJpiLurk7eMqDj0Lz6h8EDngqjKJME_cRth8jBMtAl6r-qhNdJ795uXPJxsH", 
+        cta: "Message on Signal",
         external: true,
     },
 ]
@@ -97,7 +104,7 @@ export default function ContactPage() {
                                 </Card>
                             </Link>
                         </motion.div>
-                    )).slice(0, 5)}
+                    ))}
                 </div>
             </div>
         </>
