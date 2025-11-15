@@ -29,7 +29,7 @@ export default function WelcomeNotice() {
                 description: "A demonstrating college project is now available. Fee free to explore it.",
                 action: (
                     <Button asChild>
-                    <Link href="college.ryuverse.fun">See source code</Link>
+                    <Link href="college.ryuverse.fun">Explore It</Link>
                     </Button>
                 ),
             });
