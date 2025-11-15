@@ -26,15 +26,15 @@ export default function WelcomeNotice() {
                     <span className="font-headline">A new project available</span>
                     </div>
                 ),
-                description: "A demonstrating college project is now available. Fee free to explore it.",
+                description: "A demonstrating college project is now available. Feel free to explore it.",
                 action: (
                     <Button asChild>
-                    <Link href="college.ryuverse.fun">Explore It</Link>
+                    <Link href="https://college.ryuverse.fun">Explore It</Link>
                     </Button>
                 ),
             });
             sessionStorage.setItem(NOTICE_SHOWN_KEY, "true");
-        }, 1500); // Delay of 1.5 seconds
+        }, 1000); // Delay of 1 seconds
       }
     } catch (error) {
       console.warn("Could not access sessionStorage. Welcome notice may reappear.");
