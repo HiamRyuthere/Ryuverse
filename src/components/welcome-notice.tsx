@@ -23,7 +23,7 @@ export default function WelcomeNotice() {
                 title: (
                     <div className="flex items-center gap-2">
                     <Terminal className="h-5 w-5" />
-                    <span className="font-headline">Source code is now available</span>
+                    <span className="font-headline">A new project available</span>
                     </div>
                 ),
                 description: "A demonstrating college project is now available. Fee free to explore it.",
