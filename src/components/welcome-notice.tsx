@@ -26,10 +26,10 @@ export default function WelcomeNotice() {
                     <span className="font-headline">Source code is now available</span>
                     </div>
                 ),
-                description: "Ryuverse is open source! Feel free to explore the codebase and contribute on GitHub.",
+                description: "A demonstrating college project is now available. Fee free to explore it.",
                 action: (
                     <Button asChild>
-                    <Link href="https://github.com/HiamRyuthere/Ryuverse/">See source code</Link>
+                    <Link href="college.ryuverse.fun">See source code</Link>
                     </Button>
                 ),
             });
